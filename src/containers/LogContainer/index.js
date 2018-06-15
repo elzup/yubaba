@@ -37,7 +37,7 @@ class Container extends React.Component<Props> {
 
 const ms = (state: State) => {
 	return {
-		logs: selectors.getLogs(state),
+		logs: selectors.getLogsRecent(state),
 	}
 }
 

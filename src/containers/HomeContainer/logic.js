@@ -1,4 +1,6 @@
 // @flow
+import _ from 'lodash'
+
 import type { ThunkAction } from '../../types'
 import * as actions from './actions'
 import * as logActions from '../LogContainer/actions'
@@ -8,12 +10,13 @@ import moment from 'moment'
 
 export function registerId(id: string): ThunkAction {
 	return async (dispatch, getState) => {
-		// const logs = selectors.getLogs(getState())
-		await dispatch(actions.updateId(id))
+		const logs = logSelectors.getLogs(getState())
+		_.remove(logs, { id })
 		const log = {
 			id,
 			createdAt: moment().format(),
 		}
-		await dispatch(logActions.receiveLog(log))
+		await dispatch(actions.updateId(id))
+		await dispatch(logActions.receiveLogs([...logs, log]))
 	}
 }
