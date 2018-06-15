@@ -1,5 +1,5 @@
-# Annict Mimi [![Build Status](https://travis-ci.org/elzup/annictmimi.svg?branch=master)](https://travis-ci.org/elzup/annictmimi) [![Coverage Status](https://coveralls.io/repos/github/elzup/annictmimi/badge.svg?branch=master)](https://coveralls.io/github/elzup/annictmimi?branch=master)
+# Yubaba [![Build Status](https://travis-ci.org/elzup/yubaba.svg?branch=master)](https://travis-ci.org/elzup/yubaba) [![Coverage Status](https://coveralls.io/repos/github/elzup/yubaba/badge.svg?branch=master)](https://coveralls.io/github/elzup/yubaba?branch=master)
 
-> Annict comment reader client on PWA
+> ID の良し悪しをジャッジします
 
-![https://github.com/elzup/annictmimi/raw/master/screenshot.gif](https://github.com/elzup/annictmimi/raw/master/screenshot.gif)
+![https://github.com/elzup/yubaba/raw/master/screenshot.gif](https://github.com/elzup/yubaba/raw/master/screenshot.gif)
