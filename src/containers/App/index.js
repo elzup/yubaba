@@ -9,6 +9,7 @@ import HomeContainer from '../HomeContainer'
 const RouteApp = () => (
 	<Router>
 		<Switch>
+			<Route exact path="/" component={HomeContainer} />
 			<Route exact path="/:id" component={HomeContainer} />
 		</Switch>
 	</Router>

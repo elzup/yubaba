@@ -8,7 +8,7 @@ import * as logSelectors from '../LogContainer/selectors'
 
 import moment from 'moment'
 
-export function registerId(id: string): ThunkAction {
+export function registerId({ id }: { id: string }): ThunkAction {
 	return async (dispatch, getState) => {
 		const logs = logSelectors.getLogs(getState())
 		_.remove(logs, { id })

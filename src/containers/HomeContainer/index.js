@@ -6,6 +6,7 @@ import { type Match, type RouterHistory } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography'
 import LogContainer from '../LogContainer'
 import NavBar from '../NavBarContainer'
+import IdForm from './IdForm'
 
 import type { State } from '../../types'
 // import * as selectors from './selectors'
@@ -22,20 +23,13 @@ type Props = {
 }
 
 class Container extends React.Component<Props> {
-	componentDidMount() {
-		this.props.registerId(this.props.id)
-	}
-
-	componentWillReceiveProps(nextProps) {
-		this.props.registerId(nextProps.id)
-	}
-
 	render() {
 		const { props } = this
 		// props.history.push({ search: `?day=${day}` })
 		return (
 			<div>
 				<NavBar />
+				<IdForm id={props.id} />
 				<Typography variant="title">{props.id}</Typography>
 				<LogContainer />
 			</div>
