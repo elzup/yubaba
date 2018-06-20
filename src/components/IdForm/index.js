@@ -24,6 +24,14 @@ class IdForm extends React.Component<Props> {
 		this.props.handleChange({ id: e.target.value })
 	}
 
+	componentWillReceiveProps(newProps: Props) {
+		console.log({ newProps })
+		if (!this.idRef) {
+			return
+		}
+		this.idRef.value = newProps.id
+	}
+
 	render() {
 		const { props } = this
 		return (
