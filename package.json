@@ -2,10 +2,10 @@
 	"name": "yubaba",
 	"version": "1.0.0",
 	"private": true,
-	"homepage": "https://elzup.github.io/yubaba",
+	"homepage": "https://yubaba.elzup.org",
 	"scripts": {
 		"offbuild": "node scripts/build.js",
-		"build": ". .env.production && node scripts/build.js",
+		"build": "node scripts/build.js",
 		"test": "node scripts/test.js --env=jsdom",
 		"dev": "PORT=3000 node scripts/start.js",
 		"deploy": "up production",
