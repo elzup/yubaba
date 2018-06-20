@@ -1,14 +1,21 @@
 // @flow
 import _ from 'lodash'
+import moment from 'moment'
+import nicename from 'nicename'
 
 import type { ThunkAction } from '../../types'
 import * as actions from './actions'
 import * as logActions from '../LogContainer/actions'
 import * as logSelectors from '../LogContainer/selectors'
 
-import moment from 'moment'
+export function updateId({ id }: { id: string }): ThunkAction {
+	return async (dispatch, getState) => {
+		const judge = id === '' ? [] : nicename(id)
+		await dispatch(actions.updateJudge(id, judge))
+	}
+}
 
-export function registerId({ id }: { id: string }): ThunkAction {
+export function logId({ id }: { id: string }): ThunkAction {
 	return async (dispatch, getState) => {
 		const logs = logSelectors.getLogs(getState())
 		_.remove(logs, { id })
@@ -16,7 +23,6 @@ export function registerId({ id }: { id: string }): ThunkAction {
 			id,
 			createdAt: moment().format(),
 		}
-		await dispatch(actions.updateId(id))
 		await dispatch(logActions.receiveLogs([...logs, log]))
 	}
 }

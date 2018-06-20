@@ -1,13 +1,15 @@
 // @flow
-export const UPDATE_ID: 'HomeContainer/UPDATE_ID' = 'HomeContainer/UPDATE_ID'
+export const UPDATE_JUDGE: 'HomeContainer/UPDATE_JUDGE' =
+	'HomeContainer/UPDATE_JUDGE'
 
 export const Actions = {
-	UPDATE_ID,
+	UPDATE_JUDGE,
 }
 
-export type UpdateId = {
-	type: typeof UPDATE_ID,
+export type UpdateJudge = {
+	type: typeof UPDATE_JUDGE,
 	id: string,
+	judge: any,
 }
 
-export type Action = UpdateId
+export type Action = UpdateJudge

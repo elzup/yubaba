@@ -4,13 +4,15 @@ import { Actions } from './actionTypes'
 
 export type State = Home
 
-export const initialState: State = { id: 'shimarin' }
+export const initialState: State = { id: 'shimarin', judge: [] }
 
 export default function(state: State = initialState, action: Action): State {
 	switch (action.type) {
-		case Actions.UPDATE_ID:
+		case Actions.UPDATE_JUDGE:
 			return {
+				...state,
 				id: action.id,
+				judge: action.judge,
 			}
 
 		default:

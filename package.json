@@ -25,6 +25,7 @@
 		"camelcase-keys-recursive": "^0.8.2",
 		"lodash": "^4.17.5",
 		"moment": "^2.20.1",
+		"nicename": "^1.0.3",
 		"query-string": "^5.1.0",
 		"react": "^16.2.0",
 		"react-addons-css-transition-group": "^15.6.2",

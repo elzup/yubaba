@@ -1,10 +1,11 @@
 // @flow
-import { UPDATE_ID } from './actionTypes'
-import type { UpdateId } from './actionTypes'
+import { UPDATE_JUDGE } from './actionTypes'
+import type { UpdateJudge } from './actionTypes'
 
-export function updateId(id: string): UpdateId {
+export function updateJudge(id: string, judge: any): UpdateJudge {
 	return {
-		type: UPDATE_ID,
+		type: UPDATE_JUDGE,
 		id,
+		judge,
 	}
 }

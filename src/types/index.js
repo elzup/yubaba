@@ -3,6 +3,7 @@
 import type { Store as ReduxStore, Dispatch as ReduxDispatch } from 'redux'
 import type { Action as _Action } from './action'
 import type { State as _State } from './state'
+import type { JudgeWithResult } from 'nicename/dist/types'
 
 type RehydrateAction = {
 	type: 'persist/REHYDRATE',
@@ -31,6 +32,7 @@ export type Store = ReduxStore<State, Action, Dispatch>
 
 export type Home = {
 	id: string,
+	judge: JudgeWithResult[],
 }
 
 export type Log = {
