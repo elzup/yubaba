@@ -1,5 +1,5 @@
 {
-	"name": "farm-controller-front",
+	"name": "yubaba",
 	"profile": "default",
 	"regions": ["ap-northeast-1"],
 	"type": "static",
@@ -7,11 +7,11 @@
 		"dir": "build"
 	},
 	"hooks": {
-		"build": ". .env.production && node scripts/build.js"
+		"build": "node scripts/build.js"
 	},
 	"stages": {
 		"production": {
-			"domain": "farmcon.planckunits.io",
+			"domain": "yubaba.elzup.org",
 			"path": "/"
 		}
 	}
