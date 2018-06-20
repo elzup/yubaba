@@ -34,6 +34,13 @@ class Container extends React.Component<Props> {
 			<div>
 				<NavBar />
 				<IdForm id={props.id} />
+				<a
+					href="https://namechk.com/"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					IDチェック - namechk.com
+				</a>
 				<Typography variant="title">{props.id}</Typography>
 				<LogContainer />
 				<ResultContainer id={props.id} />
