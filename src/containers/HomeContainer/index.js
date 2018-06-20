@@ -36,7 +36,7 @@ class Container extends React.Component<Props> {
 				<IdForm id={props.id} />
 				<Typography variant="title">{props.id}</Typography>
 				<LogContainer />
-				<ResultContainer />
+				<ResultContainer id={props.id} />
 			</div>
 		)
 	}
