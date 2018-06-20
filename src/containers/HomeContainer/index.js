@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography'
 import LogContainer from '../LogContainer'
 import NavBar from '../NavBarContainer'
 import IdForm from './IdForm'
+import ResultContainer from './ResultContainer'
 
 import type { State } from '../../types'
 // import * as selectors from './selectors'
@@ -19,10 +20,13 @@ type OProps = {
 
 type Props = {
 	id: string,
-	registerId: typeof logics.registerId,
+	updateId: typeof logics.updateId,
 }
 
 class Container extends React.Component<Props> {
+	componentWillReceiveProps(nextProps) {
+		this.props.updateId({ id: nextProps.id })
+	}
 	render() {
 		const { props } = this
 		// props.history.push({ search: `?day=${day}` })
@@ -32,6 +36,7 @@ class Container extends React.Component<Props> {
 				<IdForm id={props.id} />
 				<Typography variant="title">{props.id}</Typography>
 				<LogContainer />
+				<ResultContainer />
 			</div>
 		)
 	}
@@ -42,6 +47,6 @@ const ms = (state: State, op: OProps) => {
 	return { id }
 }
 
-const conn = connect(ms, { registerId: logics.registerId })
+const conn = connect(ms, { updateId: logics.updateId })
 
 export default conn(Container)

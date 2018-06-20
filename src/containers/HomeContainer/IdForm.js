@@ -16,7 +16,7 @@ type OProps = {
 type Props = {
 	id: string,
 	history: RouterHistory,
-	registerId: typeof logics.registerId,
+	logId: typeof logics.logId,
 	handleLike: Function,
 }
 
@@ -33,6 +33,6 @@ const ms = (state: State, op: OProps) => {
 	return { ...op }
 }
 
-const conn = connect(ms, { handleLike: logics.registerId })
+const conn = connect(ms, { handleLike: logics.logId })
 
 export default withRouter(conn(Container))
