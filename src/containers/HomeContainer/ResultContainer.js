@@ -17,7 +17,11 @@ type Props = {
 }
 
 const Container = (props: Props) => (
-	<div>{props.judge.map(j => <ResultBox name={props.id} result={j} />)}</div>
+	<div>
+		{props.judge.map(j => (
+			<ResultBox key={j.info.id} name={props.id} result={j} />
+		))}
+	</div>
 )
 
 const ms = (state: State, op: OProps) => ({

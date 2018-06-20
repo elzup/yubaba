@@ -10,9 +10,11 @@
 		"dev": "PORT=3000 node scripts/start.js",
 		"deploy": "up production",
 		"deploy-url": "up url production",
-		"coveralls": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+		"coveralls":
+			"jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
 		"flow": "flow",
-		"gen:env": "cp templates/temp.env .env.development.local && cp templates/temp.env .env.production.local",
+		"gen:env":
+			"cp templates/temp.env .env.development.local && cp templates/temp.env .env.production.local",
 		"precommit": "lint-staged",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook"
@@ -45,17 +47,18 @@
 		"whatwg-fetch": "2.0.3"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.0.0-beta.39",
-		"@babel/preset-env": "^7.0.0-beta.39",
+		"@babel/cli": "^7.0.0-beta.51",
+		"@babel/plugin-proposal-pipeline-operator": "^7.0.0-beta.51",
+		"@babel/preset-env": "^7.0.0-beta.51",
 		"@storybook/addon-actions": "^3.3.13",
 		"@storybook/addon-links": "^3.3.13",
 		"@storybook/addons": "^3.3.13",
 		"@storybook/react": "^3.3.13",
 		"autoprefixer": "8.0.0",
-		"babel-core": "6.26.0",
-		"babel-eslint": "8.2.1",
+		"babel-core": "^6.26.3",
+		"babel-eslint": "^8.2.3",
 		"babel-jest": "^22.2.2",
-		"babel-loader": "7.1.2",
+		"babel-loader": "^7.1.4",
 		"babel-plugin-lodash": "^3.3.2",
 		"babel-plugin-s2s-variable-initializing": "^0.1.7",
 		"babel-preset-react-app": "^3.1.1",
@@ -97,18 +100,11 @@
 		"s2s-plugins-redux": "^0.4.4"
 	},
 	"lint-staged": {
-		"src/**/*.js": [
-			"prettier --config ./.prettierrc --write",
-			"git add"
-		]
+		"src/**/*.js": ["prettier --config ./.prettierrc --write", "git add"]
 	},
 	"jest": {
-		"collectCoverageFrom": [
-			"src/**/*.{js,jsx,mjs}"
-		],
-		"setupFiles": [
-			"<rootDir>/config/polyfills.js"
-		],
+		"collectCoverageFrom": ["src/**/*.{js,jsx,mjs}"],
+		"setupFiles": ["<rootDir>/config/polyfills.js"],
 		"testMatch": [
 			"<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
 			"<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
@@ -118,11 +114,10 @@
 		"transform": {
 			"^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
 			"^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-			"^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+			"^(?!.*\\.(js|jsx|mjs|css|json)$)":
+				"<rootDir>/config/jest/fileTransform.js"
 		},
-		"transformIgnorePatterns": [
-			"[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
-		],
+		"transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"],
 		"moduleNameMapper": {
 			"^react-native$": "react-native-web"
 		},

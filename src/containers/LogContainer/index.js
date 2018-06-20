@@ -19,8 +19,8 @@ class Container extends React.Component<Props> {
 		const { props } = this
 		return (
 			<ul>
-				{props.logs.map(log => (
-					<li>
+				{props.logs.map((log, i) => (
+					<li key={i}>
 						<Button
 							onClick={() => {
 								props.history.push(`/${log.id}`)
