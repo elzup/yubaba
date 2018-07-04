@@ -14,24 +14,25 @@ type Props = {
 	receiveLog: typeof actions.receiveLog,
 }
 
+const C = (props: Props) => (
+	<ul>
+		{props.logs.map((log, i) => (
+			<li key={log.id}>
+				<Button
+					onClick={() => {
+						props.history.push(`/${log.id}`)
+					}}
+				>
+					{log.id}
+				</Button>
+			</li>
+		))}
+	</ul>
+)
+
 class Container extends React.Component<Props> {
 	render() {
-		const { props } = this
-		return (
-			<ul>
-				{props.logs.map((log, i) => (
-					<li key={i}>
-						<Button
-							onClick={() => {
-								props.history.push(`/${log.id}`)
-							}}
-						>
-							{log.id}
-						</Button>
-					</li>
-				))}
-			</ul>
-		)
+		return C(this.props)
 	}
 }
 

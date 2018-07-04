@@ -18,11 +18,14 @@ export function updateId({ id }: { id: string }): ThunkAction {
 export function logId({ id }: { id: string }): ThunkAction {
 	return async (dispatch, getState) => {
 		const logs = logSelectors.getLogs(getState())
-		_.remove(logs, { id })
-		const log = {
-			id,
-			createdAt: moment().format(),
+		if (logSelectors.isLogged(getState(), id)) {
+			_.remove(logs, { id })
+		} else {
+			logs.push({
+				id,
+				createdAt: moment().format(),
+			})
 		}
-		await dispatch(logActions.receiveLogs([...logs, log]))
+		await dispatch(logActions.receiveLogs(logs))
 	}
 }

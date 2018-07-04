@@ -8,6 +8,7 @@ type Props = {
 	id: string,
 	handleLike: ({ id: string }) => void,
 	handleChange: ({ id: string }) => void,
+	isLogged: boolean,
 }
 
 class IdForm extends React.Component<Props> {
@@ -45,10 +46,17 @@ class IdForm extends React.Component<Props> {
 						this.idRef = r
 					}}
 					onChange={this.onChange}
-					inputProps={{ 'data-test': 'event-interval-time-input' }}
+					InputLabelProps={{
+						shrink: true,
+					}}
+					inputProps={{
+						'data-test': 'event-interval-time-input',
+					}}
 					data-test="id-input"
 				/>
-				<Button onClick={this.onSubmit}>Like</Button>
+				<Button disabled={props.id === ''} onClick={this.onSubmit}>
+					{props.isLogged ? 'UnLike' : 'Like'}
+				</Button>
 			</form>
 		)
 	}
