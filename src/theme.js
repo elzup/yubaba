@@ -17,11 +17,20 @@ const theme = createMuiTheme({
 			padding: '10px',
 		},
 	},
-	paper: {
-		padding: '10px',
-	},
-	tableCell: {
-		textAlign: 'center',
+	overrides: {
+		MuiPaper: {
+			root: {
+				padding: '10px',
+				marginTop: '20px',
+				marginBottom: '20px',
+			},
+		},
+		MuiAppBar: {
+			root: {
+				padding: 0,
+				margin: 0,
+			},
+		},
 	},
 })
 export default theme

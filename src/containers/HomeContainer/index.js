@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import { type Match, type RouterHistory } from 'react-router-dom'
 // import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
+import Grid from '@material-ui/core/Grid'
+import Paper from '@material-ui/core/Paper'
 import LogContainer from '../LogContainer'
 import NavBar from '../NavBarContainer'
 import IdForm from './IdForm'
@@ -33,17 +35,27 @@ class Container extends React.Component<Props> {
 		return (
 			<div>
 				<NavBar />
-				<IdForm id={props.id} />
-				<a
-					href="https://namechk.com/"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					IDチェック - namechk.com
-				</a>
-				<Typography variant="title">{props.id}</Typography>
-				<LogContainer />
-				<ResultContainer id={props.id} />
+				<Grid container justify="center" style={{ marginBottom: '100px' }}>
+					<Grid item xs={12} md={10}>
+						<Paper>
+							<Typography variant="body1">
+								Yubaba は新しく ID (SNS アカウントID など)
+								を作る人のためのツールです。評価基準を提供します。<br />
+								※すでに自分のIDを持っている人のIDを評価するためのものではありません。
+							</Typography>
+							<IdForm id={props.id} />
+							<a
+								href="https://namechk.com/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								すでに取られてないかチェック - namechk.com ↗
+							</a>
+							<LogContainer />
+							<ResultContainer id={props.id} />
+						</Paper>
+					</Grid>
+				</Grid>
 			</div>
 		)
 	}
