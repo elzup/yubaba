@@ -19,7 +19,7 @@ function SimpleAppBar(props: { doLogout: Function }) {
 					<div>
 						<Button
 							color="inherit"
-							href="https://github.com/elzup/texter"
+							href="https://github.com/elzup/yubaba"
 							target={'_blank'}
 						>
 							<CodeIcon />
