@@ -2,7 +2,7 @@
 	"name": "yubaba",
 	"version": "1.0.0",
 	"private": true,
-	"homepage": "https://yubaba.elzup.org",
+	"homepage": "https://yubaba.elzup.com",
 	"scripts": {
 		"offbuild": "node scripts/build.js",
 		"build": "node scripts/build.js",
