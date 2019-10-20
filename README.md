@@ -1,6 +1,6 @@
 # [Yubaba](https://yubaba.anozon.me)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a29484de-cc13-42ed-824b-445f92a5e10a/deploy-status)](https://app.netlify.com/sites/nervous-tereshkova-b9df01/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6cdad6bc-a1f3-4a51-bbad-bb14d0c96f6f/deploy-status)](https://app.netlify.com/sites/tender-euclid-383b6b/deploys)
 
 
 
